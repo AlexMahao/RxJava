@@ -9,7 +9,7 @@ import rx.functions.Func1;
 public class RxJavaOperator {
 	public static void main(String[] args) {
 		
-		
+		/*
 		query("urls")
 		.flatMap(new Func1<List<String>,Observable<String>>() {
 
@@ -41,7 +41,7 @@ public class RxJavaOperator {
 			public void call(String s) {
 				System.out.println(s);
 			}
-		});
+		});*/
 		
 		/*query("urls")
 		.subscribe(new Action1<List<String>>() {
@@ -59,7 +59,38 @@ public class RxJavaOperator {
 		
 		});*/
 		
+		query("urls")
+		.flatMap(new Func1<List<String>,Observable<String>>() {
+
+			@Override
+			public Observable<String> call(List<String> urls) {
+				return Observable.from(urls);
+			}
+		}).subscribe(new Action1<String>() {
+
+			@Override
+			public void call(String arg0) {
+				// TODO Auto-generated method stub
+				System.out.println(arg0);
+			}
+		});
+	/*	
 		
+		query("urls").map(new Func1<List<String>, Observable<String>>() {
+
+			@Override
+			public Observable<String> call(List<String> arg0) {
+				
+				
+				return Observable.from(arg0);
+			}
+		}).subscribe(new Action1<String>() {
+
+			@Override
+			public void call(String arg0) {
+				System.out.println(arg0);
+			}
+		});*/
 		
 		
 		

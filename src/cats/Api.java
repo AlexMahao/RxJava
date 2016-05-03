@@ -10,8 +10,7 @@ public interface Api {
 	 * @return
 	 */
 	List<Cat> queryCats(String query);
-	
-	
+		
 	/**
 	 * 保存
 	 * @param cat

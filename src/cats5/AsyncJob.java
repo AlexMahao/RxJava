@@ -24,7 +24,6 @@ public abstract class AsyncJob<T> {
 					@Override
 					public void onError(Exception e) {
 						callback.onError(e);
-						
 					}
 				});
 			}
@@ -46,6 +45,7 @@ public abstract class AsyncJob<T> {
 					@Override
 					public void onResult(T result) {
 						AsyncJob<R> mapped = func.call(result);
+						
 						mapped.start(callback);
 					}
 

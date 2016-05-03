@@ -5,8 +5,6 @@ import java.util.List;
 
 import rx.Observable;
 import rx.functions.Func1;
-import cats3.Api.CatsQueryCallback;
-import cats3.Api.StoreCallback;
 
 public class CastsHelp {
 

@@ -3,8 +3,6 @@ package cats3;
 import java.util.Collections;
 import java.util.List;
 
-import cats3.Api.CatsQueryCallback;
-import cats3.Api.StoreCallback;
 
 
 
@@ -14,7 +12,6 @@ public class CastsHelp {
 
 	public AsyncJob<Uri> saveTheCutestCat(final String query) {
 		return new AsyncJob<Uri>() {
-			
 			
 			@Override
 			public void start(final Callback<Uri> callback) {
@@ -40,12 +37,11 @@ public class CastsHelp {
 					
 					@Override
 					public void onError(Exception e) {
-						
+						callback.onError(e);
 					}
 				});;
 			}
 		};
-		
 		
 	}
 

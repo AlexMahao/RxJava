@@ -21,17 +21,17 @@ public class ApiWrapper {
 		return Observable.create(new OnSubscribe<List<Cat>>() {
 
 			@Override
-			public void call(final Subscriber<? super List<Cat>> subscriber) {
-				api.queryCats(query,new CatsQueryCallback() {
+			public void call(final Subscriber<? super List<Cat>> arg0) {
+				api.queryCats(query, new CatsQueryCallback() {
 					
 					@Override
 					public void onCatsQueryError(Exception e) {
-						subscriber.onError(e);
+						arg0.onError(e);
 					}
 					
 					@Override
 					public void onCatListReceived(List<Cat> cats) {
-						subscriber.onNext(cats);
+						arg0.onNext(cats);
 					}
 				});
 			}

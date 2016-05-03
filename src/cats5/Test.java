@@ -7,14 +7,12 @@ public class Test {
 			
 			@Override
 			public void onResult(Uri result) {
-				// TODO Auto-generated method stub
-				
+				//Uri 地址对象
 			}
 			
 			@Override
 			public void onError(Exception e) {
-				// TODO Auto-generated method stub
-				
+				//异常
 			}
 		});
 	}

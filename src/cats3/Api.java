@@ -4,23 +4,12 @@ import java.util.List;
 
 public interface Api {
 
-	
-	interface CatsQueryCallback{
-		void onCatListReceived(List<Cat> cats);
-		void onCatsQueryError(Exception e);
-	}
-	
-	
-	interface StoreCallback{
-		void onCateStored(Uri uri);
-		void onStoteFailed(Exception e);
-	}
 	/**
 	 * 查询所有猫
 	 * @param query
 	 * @return
 	 */
-	List<Cat> queryCats(String query,CatsQueryCallback castQueryCallback);
+	List<Cat> queryCats(String query,Callback castQueryCallback);
 	
 	
 	/**
@@ -28,6 +17,6 @@ public interface Api {
 	 * @param cat
 	 * @return
 	 */
-	Uri store(Cat cat,StoreCallback storeCallback);
+	Uri store(Cat cat,Callback storeCallback);
 	
 }

@@ -9,8 +9,11 @@ public class CastsHelp {
 
 	public AsyncJob<Uri> saveTheCutestCat(final String query) {
 
+		//猫列表数据的接口回调
 		final AsyncJob<List<Cat>> catsListAsyncJob = apiWrapper
 				.queryCats(query);
+		
+		//查询最喜爱的猫
 		final AsyncJob<Cat> cutestCatAsyncJob = new AsyncJob<Cat>() {
 
 			@Override
@@ -31,6 +34,7 @@ public class CastsHelp {
 			}
 		};
 
+		//获取保存的url地址的回掉对象并返回
 		AsyncJob<Uri> storedUriAsyncJob = new AsyncJob<Uri>() {
 
 			@Override

@@ -3,8 +3,6 @@ package cats5;
 import java.util.Collections;
 import java.util.List;
 
-import cats3.Api.CatsQueryCallback;
-import cats3.Api.StoreCallback;
 
 public class CastsHelp {
 
@@ -25,18 +23,39 @@ public class CastsHelp {
 
 			@Override
 			public AsyncJob<Uri> call(Cat t) {
-				// TODO Auto-generated method stub
 				return apiWrapper.store(t);
 			}
 		});
-		
-		
-
-		
+	
 		return storedUriAsyncJob;
+		
+	}
+	
+	
+/*
+	public AsyncJob<Uri> saveTheCutestCat(final String query) {
+
+		return apiWrapper
+				.queryCats(query)
+				.map(new Func<List<Cat>, Cat>() {
+
+					@Override
+					public Cat call(List<Cat> t) {
+						
+						
+						return findCustest(t);
+					}
+				}).flatMap(new Func<Cat, AsyncJob<Uri>>() {
+
+					@Override
+					public AsyncJob<Uri> call(Cat t) {
+						
+						return apiWrapper.store(t);
+					}
+				});
 
 	}
-
+*/
 	private Cat findCustest(List<Cat> queryCats) {
 		return Collections.max(queryCats);
 	}
